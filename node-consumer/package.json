@@ -1,0 +1,13 @@
+{
+  "name": "node-kafka-consumer",
+  "version": "1.0.0",
+  "description": "Node.js Kafka Consumer for Analytics ETL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4",
+    "@elastic/elasticsearch": "^8.13.0"
+  }
+}

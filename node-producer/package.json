@@ -1,0 +1,12 @@
+{
+  "name": "node-kafka-producer",
+  "version": "1.0.0",
+  "description": "Node.js Kafka Producer for Analytics",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  }
+}
