@@ -4,6 +4,9 @@ const { Kafka } = require('kafkajs');
 const KAFKA_BROKER = process.env.KAFKA_BROKER || 'localhost:9092';
 const TOPIC_NAME = 'analytics_events';
 
+//키워드 임시로(랜덤)
+const searchKeywords = ["운동화", "노트북", "텐트", "헤드폰", "스마트폰", "백팩"];
+
 const kafka = new Kafka({
   clientId: 'analytics-producer',
   brokers: [KAFKA_BROKER], 
@@ -24,7 +27,8 @@ const produceMessage = async () => {
             id: Date.now(),
             user_id: `user-${Math.floor(Math.random() * 100)}`, 
             event_type: ['PAGE_VIEW', 'CLICK', 'PURCHASE'][Math.floor(Math.random() * 3)], 
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toISOString(),
+            search_keyword: searchKeywords[Math.floor(Math.random() * searchKeywords.length)]
         };
         
         await producer.send({
